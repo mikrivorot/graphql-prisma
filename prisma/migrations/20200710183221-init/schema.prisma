@@ -1,0 +1,23 @@
+datasource db {
+  provider = "sqlite" 
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Author {
+  id          Int      @id @default(autoincrement())
+  name        String
+  link        Link[] // Надо ли это тут?
+}
+
+model Link {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  description String
+  url         String
+  author      Author?  @relation(fields: [authorId], references: [id])
+  authorId    Int?
+}

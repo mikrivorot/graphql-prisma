@@ -1,0 +1,34 @@
+type Query {
+  info: String!
+  feed: [Link!]!
+  count: Int!
+}
+
+type Mutation {
+  postLink(url: String!, description: String!): [Link!]!
+  updateLink(id: ID!, url: String, description: String): [Link!]!
+  deleteLink(id: ID!): [Link!]!
+}
+
+type Link {
+  id: ID!
+  description: String!
+  url: String!
+  author: Author
+}
+
+type Author {
+  id: ID!
+  name: String!
+}
+
+#
+#  * The typeDefs constant defines your GraphQL schema (more about this in a bit). 
+#  * Here, it defines a simple Query type with one field called info. 
+#  * This field has the type String!. 
+#  * The exclamation mark in the type definition means that this field can never be null.
+# 
+# TODO: define, why typeDefs is a string and so strange. How we can use multiple types inside
+# Schema = all types
+# Why type Query is root and must be defined?
+# потому что тут Query = Get и здесь будут перечислены все возможные запросы/routs которые от

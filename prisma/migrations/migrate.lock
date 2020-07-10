@@ -1,0 +1,4 @@
+# Prisma Migrate lockfile v1
+
+20200710183221-init
+20200710190123-make_url_unique
