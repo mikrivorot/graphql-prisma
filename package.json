@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "@prisma/cli": "2.2.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "init_db": "node src/script.js"
   }
 }

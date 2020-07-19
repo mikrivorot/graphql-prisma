@@ -17,6 +17,7 @@ async function main() {
   await prisma.link.deleteMany();
   await prisma.author.deleteMany();
   
+// Relation queries: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/relation-queries
   const firstLink = await prisma.link.create({
     data: {
       description: 'First Fullstack tutorial for GraphQL (without author)',
